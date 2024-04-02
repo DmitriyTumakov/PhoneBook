@@ -1,12 +1,12 @@
 package ru.netology;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class PhoneBook {
-    private Map<String, String> phoneBook = new HashMap<>();
+    private Map<String, String> phoneBook = new TreeMap<>();
     private int counter;
 
     public int add(String name, String phoneNumber) {
@@ -30,6 +30,12 @@ public class PhoneBook {
     }
 
     public String printAllNames() {
-        return null;
+        int listCounter = 1;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String s : phoneBook.keySet()) {
+            stringBuilder.append(listCounter + ". " + s + "\n");
+            listCounter++;
+        }
+        return stringBuilder.toString();
     }
 }
