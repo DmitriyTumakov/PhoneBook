@@ -32,4 +32,16 @@ public class PhoneBookTest {
 
         Assertions.assertEquals(1, counter);
     }
+
+    @Test
+    public void findByNumberTest() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Kolya", "8 (965) 218 41 23");
+        phoneBook.add("Petya", "8 (955) 214 62 42");
+        phoneBook.add("Vasya", "7 (495) 356 31 35");
+
+        String result = phoneBook.findByNumber("7 (495) 356 31 35");
+
+        Assertions.assertEquals("Vasya", result);
+    }
 }
