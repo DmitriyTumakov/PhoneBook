@@ -24,4 +24,8 @@ public class PhoneBook {
                 .map(Map.Entry::getKey)
                 .collect(Collectors.joining());
     }
+
+    public String findByName(String name) {
+        return null;
+    }
 }
