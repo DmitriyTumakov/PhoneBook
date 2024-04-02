@@ -56,4 +56,16 @@ public class PhoneBookTest {
 
         Assertions.assertEquals("8 (965) 218 41 23", result);
     }
+
+    @Test
+    public void printAllNamesTest() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Petya", "8 (965) 218 41 23");
+        phoneBook.add("Vasya", "8 (955) 214 62 42");
+        phoneBook.add("Kolya", "7 (495) 356 31 35");
+
+        String result = phoneBook.printAllNames();
+
+        Assertions.assertEquals("1. Kolya\n2. Petya\n3. Vasya\n", result);
+    }
 }
